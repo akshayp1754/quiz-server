@@ -18,6 +18,8 @@ mongoose
 
 app.use("/", require('./routes/categoryRoutes') )
 
+app.use("/", require('./routes/comprehensionRoute'))
+
 
 
 
