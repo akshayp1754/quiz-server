@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 
 const categorySchema = {
     description: String,
-    // categories: String,
+    categories: String,
     // item: String,
     // belongsTo: String
 }

@@ -19,7 +19,18 @@ router.route("/comprehension").post((req, res) => {
 });
 
 router.route("/test").get((req, res) => {
-  comprehensionQue.find().then((foundQue) => res.json(foundQue));
+  try{
+  const data = comprehensionQue.find().then((foundQue) => res.status(200).json({
+    success: true,
+    data: foundQue,
+    message: "Data fetched successfully"
+  }));
+  }catch(error){
+    res.status(400).json({
+      success: false,
+      message: error.message
+    })
+  }
 });
 
 module.exports = router;

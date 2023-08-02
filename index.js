@@ -20,7 +20,11 @@ app.use("/", require('./routes/categoryRoutes') )
 
 app.use("/", require('./routes/comprehensionRoute'))
 
+app.use("/", require('./routes/registration'))
 
+app.get("/", (req, res) => {
+  return res.json({ welcome: `to my backend for the Quiz App` });
+});
 
 
 
