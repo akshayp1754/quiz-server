@@ -5,7 +5,7 @@ const ComprehensionSchema = {
     questionTitle : String,
     questionText : String,
     // radioGroup: Boolean,
-    option : String,
+    option : [String],
 }
 
 const comprehensionQue = mongoose.model("comprehensionQue", ComprehensionSchema )

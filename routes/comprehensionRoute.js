@@ -8,6 +8,7 @@ router.route("/comprehension").post((req, res) => {
   const questionText = req.body.questionText;
   const option = req.body.option;
 
+  
   const newComprehensionQue = new comprehensionQue({
     passage,
     questionTitle,
