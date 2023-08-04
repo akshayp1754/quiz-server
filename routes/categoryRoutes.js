@@ -3,20 +3,19 @@ const router = express.Router()
 const categories = require('../models/category')
 
 router.route('/category').post((req, res) => {
-    const description = req.body.description
-   
+    const input = req.body.input
+   const inputField = req.body.inputField
     
     const newCategory = new categories({
-        description,
+       input,
+       inputField
         
     })
 
     newCategory.save()
 })
 
-// router.route("/test").get((req, res) => {
-//     categories.find().then((foundQue) => res.json(foundQue));
-//   });
+
 
 
 module.exports = router;

@@ -2,27 +2,7 @@ const express = require("express");
 const router = express.Router();
 const UserModel = require("../models/signup");
 
-// router.get("/user", async (req, res) => {
-//   try {
-//     const users = await UserModel.find();
-//     if(!users){
-//       res.status(400).json({
-//         success: false,
-//         message: "No data found"
-//       })
-//     }
-//     return  res.status(200).json({
-//       success: true,
-//       data: users,
-//       message: "Data fetched successfully",
-//     });
-//   } catch (error) {
-//     res.status(400).json({
-//       success: false,
-//       message: error.message,
-//     });
-//   }
-// })
+
 
 router.route("/login").post(async (req, res) => {
   try {
@@ -62,7 +42,7 @@ router.route("/signup").post(async(req, res) => {
   const { username } = req.body;
   const { email } = req.body;
   const { password } = req.body;
-  console.log(username, email, password);
+  // console.log(username, email, password);
   try {
     const user =await UserModel.findOne({ email: email });
     if (user) {
@@ -72,12 +52,7 @@ router.route("/signup").post(async(req, res) => {
         data:null
       });
     }
-    // const newUser = await UserModel.create({
-    //   username: username,
-    //   email: email,
-    //   password: password,
-    // })
-
+    
     const newUserModel = new UserModel({
       username: username,
       email: email,

@@ -22,6 +22,9 @@ app.use("/", require('./routes/comprehensionRoute'))
 
 app.use("/", require('./routes/auth'))
 
+app.use("/", require('./routes/clozeRoute'))
+
+
 app.get("/", (req, res) => {
   return res.json({ welcome: `to my backend for the Quiz App` });
 });
