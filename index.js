@@ -8,7 +8,7 @@ app.use(cors())
 app.use(express.json())
 
 mongoose
-  .connect('mongodb+srv://akshay_pawar:akshayp1754@cluster0.whccscg.mongodb.net/quiz')
+  .connect(` ${process.env.DATABASE}`)
   .then(() => console.log("connection established"));
 
 
